@@ -33,6 +33,7 @@
     .title {
       font-size: var(--lg);
       margin-bottom: 40px;
+      display: block;
     }
     .my-order-container {
       display: grid;
@@ -91,6 +92,11 @@
     .shopping-cart p:nth-child(3) {
       font-size: var(--md);
       font-weight: bold;
+    }
+    @media (max-width: 640px) {
+      .title {
+        display: none;
+      }
     }
   </style>
 </head>
