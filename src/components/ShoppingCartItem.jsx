@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/ShoppingCartItem.scss'
+import '@styles/ShoppingCartItem.scss'
 
 const ShoppingCartItem = () => {
   return (
@@ -9,7 +9,6 @@ const ShoppingCartItem = () => {
       </figure>
       <p>Bike</p>
       <p>$ 130.00</p>
-      {/* <img src="./icons/icon_close.png" alt /> */}
     </div>
   )
 }
