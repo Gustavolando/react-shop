@@ -5,7 +5,7 @@ const initialState = {
 }
 
 const useInitialState = () => {
-  const [state, setSteta] = useState(initialState)
+  const [state, setState] = useState(initialState)
   
   const addToCart = (payload) => {
     setState({
