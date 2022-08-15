@@ -11,7 +11,7 @@ import Checkout from '@pages/Checkout';
 import SendEmail from '@pages/SendEmail';
 import CreateAccount from '@pages/CreateAccount';
 import NewPassword from '@pages/NewPassword';
-import AppContext from '@context/appContext';
+import AppContext from '@context/AppContext';
 import useInitialState from '@hooks/useInitialState';
 import '@styles/global.css'
 
