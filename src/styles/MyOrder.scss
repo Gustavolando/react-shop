@@ -3,6 +3,12 @@
   right: 0;
   width: 360px;
   padding: 24px;
+  // box-sizing: border-box;
+  background-color: white;
+  top: 60px;
+  bottom: 0;
+  border-radius: 6px;
+  border: 1px solid var(--very-light-pink);
 }
 .my-order-content {
   display: flex;
