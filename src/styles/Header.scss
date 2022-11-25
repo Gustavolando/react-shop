@@ -1,16 +1,24 @@
 @import 'vars';
 
 nav {
+  position: sticky;
+  top: 0;
+  width: calc(100% - 48px);
   display: flex;
   justify-content: space-between;
   padding: 0 32px;
   border-bottom: 1px solid var(--very-light-pink);
+  background-color: var(--white);
+}
+ul {
+  cursor: pointer;
 }
 .menu {
   display: none;
 }
 .nav-logo {
   width: 100px;
+  padding-right: 8px;
 }
 .navbar-left {
   display: flex;

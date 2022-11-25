@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useRef } from 'react'
 import '@styles/Header.scss'
 import Menu from '@components/Menu'
 import MyOrder from '@containers/MyOrder'
@@ -14,8 +14,27 @@ const Header = () => {
 
   const handleToggle = () => {
     setToggle(!toggle)
+    // setToggleOrders(false)
   }
 
+  const handleToggleOrders = () => {
+    setToggleOrders(!toggleOrders)
+    // setToggle(false)
+  }
+
+  const mainMenu = useRef(null)
+  const asideMyOrder = useRef(null)
+  const closeOpenMenus = (e)=>{
+    if (mainMenu.current && toggle && !mainMenu.current.contains(e.target)) {
+      setToggle(false)
+    }
+    const navbarEmail = document.querySelector(".navbar-email")
+    if (asideMyOrder.current && toggleOrders && !asideMyOrder.current.contains(e.target) && e.target != navbarEmail) {
+      setToggleOrders(false)
+    }
+  }
+  document.addEventListener('mousedown',closeOpenMenus)
+  
   return (
     <nav>
       <img src={menu} alt="menu" className="menu" />
@@ -49,15 +68,19 @@ const Header = () => {
           </li>
           <li 
             className="navbar-shopping-cart" 
-            onClick={() => setToggleOrders(!toggleOrders)}
+            onClick={handleToggleOrders}
           >
             <img src={shoppingCart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
           </li>
         </ul>
       </div>
-      {toggle && <Menu />}
-      {toggleOrders && <MyOrder />}
+      <div className="menu-container" ref={mainMenu}>
+        {toggle && <Menu />}
+      </div>
+      <div className="my-order-container" ref={asideMyOrder}>
+        {toggleOrders && <MyOrder />}
+      </div>
     </nav>
   )
 }

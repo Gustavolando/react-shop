@@ -1,10 +1,15 @@
+.my-order-container {
+  position: fixed;
+  right: 0;
+}
 .MyOrder {
-  position: absolute;
+  position: fixed;
   right: 0;
   width: 360px;
   padding: 24px;
-  // box-sizing: border-box;
+  box-sizing: border-box;
   background-color: white;
+  opacity: 0.95;
   top: 60px;
   bottom: 0;
   border-radius: 6px;
@@ -13,6 +18,11 @@
 .my-order-content {
   display: flex;
   flex-direction: column;
+}
+.orderItem-container {
+  max-height: calc(100vh - 300px);
+  margin-bottom: 5px;
+  overflow-y: auto;
 }
 .title-container {
   display: flex;

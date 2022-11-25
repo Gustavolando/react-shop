@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import OrderItem from '@components/OrderItem'
 import AppContext from '@context/AppContext'
 import '@styles/MyOrder.scss'
+
 import flechita from '@icons/flechita.svg'
 
 const MyOrder = () => {
@@ -17,10 +18,11 @@ const MyOrder = () => {
         <p className="title">My order</p>
       </div>
       <div className="my-order-content">
-        {state.cart.map((item, index) => (
-          // <OrderItem product={item} key={`orderItem-${item.id}`} />
-          <OrderItem product={item} key={`orderItem-${index}`} indexValue={index} />
-        ))}
+        <div className="orderItem-container">
+          {state.cart.map((item, index) => (
+            <OrderItem product={item} key={`orderItem-${index}`} indexValue={index} />
+          ))}
+        </div>
         <div className="order">
           <p>
             <span>Total</span>

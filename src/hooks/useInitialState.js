@@ -20,10 +20,15 @@ const useInitialState = () => {
     })
   }
 
+  const isInCart = (productId) => {
+    return state.cart.some(product => product.id === productId)
+  }
+
   return {
     state,
     addToCart,
-    removeFromCart
+    removeFromCart,
+    isInCart
   }
 }
 

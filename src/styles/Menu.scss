@@ -1,5 +1,10 @@
 @import '_vars';
 
+.menu-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
 .Menu {
   width: 100px;
   height: auto;
@@ -9,6 +14,9 @@
   position: absolute;
   top: 60px;
   right: 50px;
+  background-color: var(--white);
+  opacity: 0.95;
+  z-index: 100;
 }
 .Menu ul {
   list-style: none;
@@ -31,6 +39,14 @@
   text-decoration: none;
   margin-bottom: 20px;
   display: inline-block;
+  opacity: 0.9;
+}
+.Menu ul li:hover a {
+  opacity: 1;
+  // border: 1px solid var(--hospital-green);
+  color: var(--hospital-green);
+  text-shadow: 0 0 20px var(--hospital-green),
+  0 0 30px var(--hospital-green);
 }
 .Menu ul li:last-child a {
   color: var(--hospital-green);
