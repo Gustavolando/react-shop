@@ -4,14 +4,14 @@
 }
 .MyOrder {
   position: fixed;
+  top: 60px;
+  bottom: 0;
   right: 0;
   width: 360px;
   padding: 24px;
   box-sizing: border-box;
   background-color: white;
   opacity: 0.95;
-  top: 60px;
-  bottom: 0;
   border-radius: 6px;
   border: 1px solid var(--very-light-pink);
 }
@@ -26,12 +26,25 @@
 }
 .title-container {
   display: flex;
+  align-items: center;
 }
 .title-container img {
-  margin-right: 14px;
+  margin-right: 8px;
+  padding: 8px;
   transform: rotate(180deg);
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.5;
+  scale: 1;
 }
-.title {
+.title-container img:hover {
+  opacity: 1;
+}
+.title-container img:active {
+  scale: 1.5;
+}
+.title-container .title {
+  margin: 16px 0;
   font-size: var(--lg);
   font-weight: bold;
 }

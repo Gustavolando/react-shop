@@ -3,7 +3,8 @@
 nav {
   position: sticky;
   top: 0;
-  width: calc(100% - 48px);
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 32px;
