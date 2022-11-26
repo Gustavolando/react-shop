@@ -1,6 +1,6 @@
 @import 'vars';
 
-nav {
+.navvar-container {
   position: sticky;
   top: 0;
   box-sizing: border-box;
@@ -11,7 +11,7 @@ nav {
   border-bottom: 1px solid var(--very-light-pink);
   background-color: var(--white);
 }
-ul {
+.navvar-container ul li {
   cursor: pointer;
 }
 .menu {

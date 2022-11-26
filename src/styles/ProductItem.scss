@@ -8,6 +8,7 @@
   height: 240px;
   border-radius: 20px;
   object-fit: cover;
+  cursor: pointer;
 }
 .product-info {
   display: flex;
@@ -30,15 +31,17 @@
   0 0 8px 1px var(--hospital-green);
   cursor: pointer;
 }
+.product-info div p {
+  margin-top: 0;
+  cursor: pointer;
+}
 .product-info div p:nth-child(1) {
   font-weight: bold;
   font-size: var(--md);
-  margin-top: 0;
   margin-bottom: 4px;
 }
 .product-info div p:nth-child(2) {
   font-size: var(--sm);
-  margin-top: 0px;
   margin-bottom: 0px;
   color: var(--very-light-pink);
 }

@@ -47,7 +47,7 @@ const Header = () => {
   document.addEventListener('mousedown',closeOpenMenus)
   
   return (
-    <nav>
+    <nav className='navvar-container'>
       <img src={menu} alt="menu" className="menu" onClick={handleToggleMenuMobile} />
       <div className="navbar-left">
         <img src={logo} alt="logo" className="nav-logo" />
