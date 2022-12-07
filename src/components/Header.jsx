@@ -8,47 +8,52 @@ import logo from '@logos/logo_yard_sale.svg'
 import AppContext from '@context/AppContext'
 import shoppingCart from '@icons/icon_shopping_cart.svg'
 
-const Header = () => {
+const Header = ( {layoutClick} ) => {
   const [toggle, setToggle] = useState(false)
   const [toggleOrders, setToggleOrders] = useState(false)
   const [toggleMenuMobile, setToggleMenuMobile] = useState(false)
   const { state } = useContext(AppContext)
 
   const handleToggle = () => {
+    console.log('handleToggle toggle ', toggle);
     setToggle(!toggle)
-    // setToggleOrders(false)
   }
 
   const handleToggleOrders = () => {
+    console.log('handleToggleOrders toggleOrders ', toggleOrders);
     setToggleOrders(!toggleOrders)
-    // setToggle(false)
   }
-
+  
   const handleToggleMenuMobile = () => {
+    console.log('handleToggleMenuMobile toggleMenuMobile ', toggleMenuMobile);
     setToggleMenuMobile(!toggleMenuMobile)
-    // setToggleMenuMobile(false)
   }
 
-  const userMenu = useRef(null)
-  const menuMobile = useRef(null)
+  const menuUser = useRef(null)
+  const navbarEmail = useRef(null)
   const asideMyOrder = useRef(null)
+  const navbarShoppingCart = useRef(null)
+  const iconMenuMobile = useRef(null)
+  const menuMobile = useRef(null)
   const closeOpenMenus = (e)=>{
-    if (userMenu.current && toggle && !userMenu.current.contains(e.target)) {
+    if (menuUser.current && toggle && !navbarEmail.current.contains(layoutClick) && !menuUser.current.contains(layoutClick)) {
       setToggle(false)
     }
-    const navbarEmail = document.querySelector(".navbar-email")
-    if (asideMyOrder.current && toggleOrders && !asideMyOrder.current.contains(e.target) && e.target != navbarEmail) {
+    if (asideMyOrder.current && toggleOrders && !navbarShoppingCart.current.contains(layoutClick) && !navbarEmail.current.contains(layoutClick) && !asideMyOrder.current.contains(layoutClick)) {
       setToggleOrders(false)
     }
-    if (menuMobile.current && toggleMenuMobile && !menuMobile.current.contains(e.target)) {
+    if (menuMobile.current && toggleMenuMobile && !menuMobile.current.contains(layoutClick) && !iconMenuMobile.current.contains(layoutClick)) {
       setToggleMenuMobile(false)
     }
   }
-  document.addEventListener('mousedown',closeOpenMenus)
+
+  if (layoutClick) {
+    closeOpenMenus()
+  }
   
   return (
     <nav className='navvar-container'>
-      <img src={menu} alt="menu" className="menu" onClick={handleToggleMenuMobile} />
+      <img src={menu} alt="menu" className="menu" onClick={handleToggleMenuMobile} ref={iconMenuMobile} />
       <div className="navbar-left">
         <img src={logo} alt="logo" className="nav-logo" />
         <ul>
@@ -74,19 +79,24 @@ const Header = () => {
       </div>
       <div className="navbar-right">
         <ul>
-          <li className="navbar-email" onClick={handleToggle}>
+          <li 
+            className="navbar-email" 
+            onClick={handleToggle} 
+            ref={navbarEmail}
+          >
             user@example.com
           </li>
           <li 
             className="navbar-shopping-cart" 
             onClick={handleToggleOrders}
+            ref={navbarShoppingCart}
           >
             <img src={shoppingCart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
           </li>
         </ul>
       </div>
-      <div className="menu-container" ref={userMenu}>
+      <div className="menu-container" ref={menuUser}>
         {toggle && <Menu />}
       </div>
       <div className="my-order-container" ref={asideMyOrder}>
