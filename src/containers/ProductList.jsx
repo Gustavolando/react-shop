@@ -11,9 +11,19 @@ const ProductList = () => {
   return (
     <section className="main-container">
       <div className="ProductList">
-        {products.map(product => (
-          <ProductItem product={product} key={product.id}/>
-        ))}
+        {products.map(product => {
+          if (product.images.length > 0 
+            && product.images[0] !== '' 
+            && product.images[0] !== 'asdfa'
+            && product.images[0] !== 'asdfaf'
+            && product.images[0] !== 'hjk'
+            && product.images[0] !== 'none'
+          ) {
+            return (
+              <ProductItem product={product} key={product.id}/>
+            )
+          }
+        })}
       </div>
     </section>
   )
