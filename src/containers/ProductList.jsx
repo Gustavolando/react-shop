@@ -12,15 +12,14 @@ const ProductList = () => {
     <section className="main-container">
       <div className="ProductList">
         {products.map(product => {
-          if (product.title === 'santiago-guallichico') {
-            console.log(product);
-          }
           if (product.images.length > 0 
             && product.images[0] !== '' 
             && product.images[0] !== 'asdfa'
             && product.images[0] !== 'asdfaf'
             && product.images[0] !== 'hjk'
             && product.images[0] !== 'none'
+            && product.images[0] !== 'ggggg'
+            && !product.images[0].includes("https://cdn1.coppel.com/images/catalog/pm/")          
           ) {
             return (
               <ProductItem product={product} key={product.id}/>
