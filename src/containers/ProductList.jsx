@@ -12,6 +12,9 @@ const ProductList = () => {
     <section className="main-container">
       <div className="ProductList">
         {products.map(product => {
+          if (product.title === 'santiago-guallichico') {
+            console.log(product);
+          }
           if (product.images.length > 0 
             && product.images[0] !== '' 
             && product.images[0] !== 'asdfa'
