@@ -11,6 +11,10 @@ const ProductItem = ({product}) => {
     addToCart(item)
   }
 
+  if (product.title === 'santiago-guallichico') {
+    console.log(product);
+  }
+  
   return (
     <div className="ProductItem">
       <img src={product.images[0]} alt={product.title} />
