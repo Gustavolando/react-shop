@@ -15,17 +15,14 @@ const Header = ( {layoutClick} ) => {
   const { state } = useContext(AppContext)
 
   const handleToggle = () => {
-    console.log('handleToggle toggle ', toggle);
     setToggle(!toggle)
   }
 
   const handleToggleOrders = () => {
-    console.log('handleToggleOrders toggleOrders ', toggleOrders);
     setToggleOrders(!toggleOrders)
   }
   
   const handleToggleMenuMobile = () => {
-    console.log('handleToggleMenuMobile toggleMenuMobile ', toggleMenuMobile);
     setToggleMenuMobile(!toggleMenuMobile)
   }
 
